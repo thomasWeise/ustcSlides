@@ -1,0 +1,94 @@
+%%%
+%%% Basic color definitions
+%%%
+\usecolortheme{orchid}%
+\useinnertheme{rectangles}%
+\useoutertheme{infolines}%
+%
+\definecolor{footerdarkblue}{rgb}{0.04,0.13333333333333333333333333333333,0.6039215686274509803921568627451}%
+\definecolor{blockbgblue}{rgb}{0.77647058823529411764705882352941,0.85098039215686274509803921568627,0.94509803921568627450980392156863}%
+\definecolor{blocktitlebgblue}{rgb}{0.5,0.6,0.9}%
+\definecolor{alertviolet}{rgb}{0.43921568627450980392156862745098,0.18823529411764705882352941176471,0.62745098039215686274509803921569}%
+\definecolor{alertvioletB}{rgb}{0.8,0.75294117647058823529411764705882,0.85098039215686274509803921568627}%
+\definecolor{alertvioletC}{rgb}{0.619607843137254901960784313725,0.470588235294117647058823529411,0.7392156862745098039215686274505}%
+\definecolor{exampleBody}{rgb}{0.91764705882352941176470588235294,0.94509803921568627450980392156863,0.86666666666666666666666666666667}%
+\definecolor{exampleHead}{rgb}{0.57254901960784313725490196078431,0.81568627450980392156862745098039,0.31372549019607843137254901960784}%
+%
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}%
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!75!black}%
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!50!black}%
+\setbeamercolor*{palette quaternary}{fg=white,bg=black}%
+%
+\setbeamercolor*{title}{parent=palette primary,fg=white}%
+%
+\setbeamercolor*{block title}{use=structure,fg=black,bg=blocktitlebgblue}%
+\setbeamercolor*{block title alerted}{parent=block title}%
+\setbeamercolor*{block title example}{parent=block title,bg=exampleHead}%
+\setbeamercolor*{block body}{parent=palette primary,fg=black,bg=blockbgblue}%
+\setbeamercolor*{block body alerted}{parent=block body}%
+\setbeamercolor*{block body example}{parent=block body,bg=exampleBody}%
+\setbeamercolor*{alerted text}{parent=palette primary, fg=alertviolet}%
+\definecolor{listingcommentgray}{gray}{0.6}%
+%
+\setbeamercolor*{block title alerted}{fg=black,bg=alertvioletC}%
+\setbeamercolor*{block body alerted}{fg=black,bg=alertvioletB}%
+%
+\setbeamercolor*{frametitle}{fg=yellow!260!white}%
+\setbeamercolor*{framesubtitle}{fg=black}%
+%
+%%%
+%%% Templates for different slide elements
+%%%
+\setbeamertemplate{bibliography item}[book]%
+%
+\setbeamertemplate{items}[ball]%
+\setbeamertemplate{item}[ball]%
+\setbeamercolor{subitem projected}{bg=blocktitlebgblue}%
+\setbeamercolor{item projected}{bg=blocktitlebgblue}%
+\setbeamercolor{items projected}{bg=blocktitlebgblue}%
+%
+\setbeamertemplate{sections/subsections in toc}[ball]%
+\setbeamerfont{section number projected}{family=\sffamily,series=\bfseries,size=\normalsize}%
+%
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=false,shadow=true]
+\setbeamertemplate{part page}[default][colsep=-4bp,rounded=false,shadow=true]
+%
+\defbeamertemplate*{headline}{BLANK}{}%
+%
+\setbeamersize{text margin left=1em,text margin right=1em}%
+%
+%%%
+%%% Some internal commands to get headlines nicely vertically aligned.
+%%% 
+\newlength{\@blabtmpFTL}%
+\newsavebox{\@blabtmpFTLbox}%
+\defbeamertemplate*{frametitle}{UBRI}{%
+\vspace*{3pt}%
+\savebox{\@blabtmpFTLbox}{\mbox{{\usebeamerfont{frametitle}{\insertframetitle}}}}%
+\usebeamerfont{frametitle}{%
+\setlength{\@blabtmpFTL}{\ht\@blabtmpFTLbox}%
+\addtolength{\@blabtmpFTL}{\dp\@blabtmpFTLbox}%
+\addtolength{\@blabtmpFTL}{-20pt}%
+\setlength{\@blabtmpFTL}{0.5\@blabtmpFTL}%
+\vspace*{-\@blabtmpFTL}%
+\usebox\@blabtmpFTLbox%
+}%
+}%
+%
+%%
+%% Font definitions for titles and that alike.
+%%
+%
+\setbeamerfont{title}{parent=titlelike,size*={16}{0},series=\bfseries}%
+\setbeamerfont{frametitle}{parent=titlelike,size*={12}{0},series=\bfseries}%
+%
+%%%
+%%% Auxilliary definitions.
+%%%
+\defbeamertemplate*{navigation symbols}{UBRI}{}%
+%
+\setbeamerfont{block title example}{parent={block title},size=\footnotesize}%
+\setbeamerfont{block body example}{parent={block body},size=\footnotesize}%
+\setbeamerfont{example text}{parent={normal text},size=\footnotesize}%
+%
+\setbeamertemplate{blocks}[rounded][shadow=true]

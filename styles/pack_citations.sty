@@ -1,0 +1,30 @@
+%%%
+%%% Load natbib for references
+%%%
+\RequirePackage[square,numbers,comma,sort&compress]{natbib}%
+%
+\bibpunct{[}{]}{,}{n}{, }{,}%
+%
+\gdef\bibnumfmt#1{#1.}%
+%
+\setlength{\bibsep}{0mm}%
+%
+%%%
+%%% Bibliography commands
+%%%
+%
+%
+\let\@bib@oldcite\cite%
+\let\@bib@oldcitep\citep%
+\let\@bib@oldcitet\citet%
+\let\@bib@oldcitete\citete%
+\let\@bib@oldCitet\Citet%
+\let\@bib@oldCitete\Citete%
+%
+\gdef\cite#1{\textsuperscript{\textnormal{\scalebox{0.75}{\color{footerdarkblue}{\@bib@oldcite{#1}}}}}}%
+\gdef\citep#1{\textsuperscript{\textnormal{\scalebox{0.75}{\color{footerdarkblue}{\@bib@oldcitep{#1}}}}}}%
+\gdef\scitep#1{\textsuperscript{\textnormal{\scalebox{0.75}{~\color{footerdarkblue}{\@bib@oldcitep{#1}}}}}}%
+\gdef\citet#1{\citeauthor{#1}~\citep{#1}}%
+\gdef\Citet#1{\Citeauthor{#1}~\citep{#1}}%
+\gdef\citete#1#2{\citeauthor{#1}~\citep{#2}}%
+\gdef\Citete#1#2{\Citeauthor{#1}~\citep{#2}}%

@@ -1,0 +1,13 @@
+%
+%
+%%% Numprint: Needed to have nice looking numerals%
+%%
+\RequirePackage{numprint}%
+%
+\npfourdigitnosep%
+\npaddmissingzero%
+\npdecimalsign{.}%
+\renewcommand*\npunitcommand[1]{#1}%
+\npthousandsep{\hspace*{0.17em}}%
+\npproductsign{\cdot}%
+%

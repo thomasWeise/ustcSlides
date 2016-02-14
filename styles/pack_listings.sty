@@ -1,0 +1,81 @@
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Listings Commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\gdef\listingBasicStyle{\ttfamily\footnotesize}%
+\gdef\listingNumberStyle{\tiny\rmfamily}%
+\gdef\listingKeywordStyleA{\color{violet}\textbf}%
+\gdef\listingKeywordStyleB{\color{teal}\textbf}%
+\gdef\listingOperatorStyle#1{\textbf{\color{cyan}{#1}}}%
+\gdef\listingCommentFormat{\footnotesize\itshape\color{listingcommentgray}}%
+\global\let\listingKeywordStyleC\listingCommentFormat%
+\global\let\listingCommentFormatB\listingCommentFormat%
+\gdef\listingOperatorStyle#1{{\listingKeywordStyleB{#1}}}%
+\gdef\listingStringStyle{\color{red}}%
+\xdef\listingIdentifierStyle{}%
+%
+\RequirePackage[formats]{listings}%
+\RequirePackage{lstlang1}%
+\RequirePackage{lstlang2}%
+\RequirePackage{lstlang3}%
+\RequirePackage{textcomp}%
+%
+%
+%%% We treat some unicode characters as literate programming keys,
+%%% in order to avoid "inputenc Error: Unicode char \u8" as described
+%%% in http://stackoverflow.com/questions/1116266/
+\lstset{literate=%
+{Ö}{{\"O}}1%
+{Ä}{{\"A}}1%
+{Ü}{{\"U}}1%
+{ß}{{\ss}}2%
+{ü}{{\"u}}1%
+{ä}{{\"a}}1%
+{ö}{{\"o}}1%
+{²}{{\textsuperscript{2}}}1%
+{³}{{\textsuperscript{3}}}1%
+}%
+%
+%%% We load Java, XML, and C++ by default
+\lstloadlanguages{Java,XML,C++}%
+%
+%%% Our basic styles and colors
+\lstset{%
+basicstyle=\listingBasicStyle,%
+commentstyle=\listingCommentFormat,%
+numberstyle=\listingNumberStyle,%
+keywordstyle=[1]\listingKeywordStyleA,%
+keywordstyle=[2]\listingKeywordStyleB,%
+keywordstyle=[3]\listingKeywordStyleC,%
+identifierstyle=\listingIdentifierStyle,%
+stringstyle=\listingStringStyle,%
+mathescape=true,%
+breaklines=true,%
+breakatwhitespace=true,%
+captionpos=b,%
+escapeinside={(*@}{@*)},%
+emptylines=2,%
+tabsize=2,%
+showstringspaces=true,%
+showlines=false,%
+upquote=true%
+}%
+%
+%
+%%% 
+%%% Put a listing as a block element
+%%% #1 relative width
+%%% #2 caption
+\newenvironment<>{listingblock}[2][0.95\paperwidth]{%
+\begin{actionenv}%
+\def\insertblocktitle{Listing: #2}%
+\begin{minipage}{#1}%
+\mode<presentation>{\setbeamercolor{local structure}{parent=example text}}%
+\usebeamertemplate{block example begin}%%
+}{%%
+\usebeamertemplate{block example end}%
+\end{minipage}%
+\end{actionenv}%
+}%
+%

@@ -1,0 +1,16 @@
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.ent
+*.idx
+*.log
+*.nav
+*.out
+*.out.ps
+*.ps
+*.snm
+*.toc
+
+# only in the root folder
+/*.pdf

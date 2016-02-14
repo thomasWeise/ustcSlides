@@ -1,0 +1,14 @@
+%
+%%%
+%%% Mathematics Commands
+%%%
+\RequirePackage{mathtools}%
+%
+\gdef\clap#1{\hbox to 0pt{\hss#1\hss}}%
+\gdef\mathllap{\mathpalette\mathllapinternal}%
+\gdef\mathrlap{\mathpalette\mathrlapinternal}%
+\gdef\mathclap{\mathpalette\mathclapinternal}%
+%
+\def\mathllapinternal#1#2{\llap{$\mathsurround=0pt#1{#2}$}}%
+\def\mathrlapinternal#1#2{\rlap{$\mathsurround=0pt#1{#2}$}}%
+\def\mathclapinternal#1#2{\clap{$\mathsurround=0pt#1{#2}$}}%
