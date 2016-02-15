@@ -83,3 +83,68 @@
 \@tempLocateBoxPrint%
 }%
 %
+%
+%% Locate a graphic at a specific position:
+%% #1 visibility passed to \only (set to {} for always-visible things)
+%% #2 the [] part of the graphic
+%% #3 the path to the graphic
+%% #4 the x-coordinate (between 0 and 1)
+%% #5 the y-coordinate (between 0 and 1)
+\gdef\locateGraphic#1#2#3#4#5{%
+\locate{#1}{\includegraphics[#2]{#3}}{#4}{#5}%%
+}%
+%
+%
+%% Locate a graphic with frame at a specific position 
+%% #1 visibility passed to \only (set to {} for always-visible things)
+%% #2 the [] part of the graphic
+%% #3 the path to the graphic
+%% #4 the x-coordinate (between 0 and 1)
+%% #5 the y-coordinate (between 0 and 1)
+\gdef\locateFramedGraphic#1#2#3#4#5{%
+\locate{#1}{%
+\begingroup%
+\setlength{\fboxrule}{3pt}%
+\setlength{\fboxsep}{3pt}%
+\fcolorbox{white}{blocktitlebgblue}{%
+\includegraphics[#2]{#3}}%
+\endgroup%
+}{#4}{#5}%
+}%
+%
+%% locate something within a framed bock
+% #1 the display limits
+% #2 the width
+% #3 the contents
+% #4 the x coordinate
+% #5 the y coordinate
+% #6 the background color
+% #7 the frame color
+%
+\gdef\locateFramedBox#1#2#3#4#5#6#7{%
+\locate{#1}{%
+\begingroup%
+\setlength{\fboxrule}{3pt}%
+\setlength{\fboxsep}{3pt}%
+%
+\if\relax\detokenize{#6}\relax%
+\edef\@bgbox@tmpc@A{white}%
+\else%
+\edef\@bgbox@tmpc@A{#6}%
+\fi%
+%
+\if\relax\detokenize{#7}\relax%
+\edef\@bgbox@tmpc@B{blocktitlebgblue}%
+\else%
+\edef\@bgbox@tmpc@B{#7}%
+\fi%
+%
+\@blabtmplocatewcap=#2\paperwidth%
+%
+\fcolorbox{\@bgbox@tmpc@B}{\@bgbox@tmpc@A}{%
+\parbox{\@blabtmplocatewcap}{#3}%
+}%
+\endgroup%
+}{#4}{#5}%
+}%
+%

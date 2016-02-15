@@ -11,6 +11,7 @@
 *.ps
 *.snm
 *.toc
+*.vrb
 
 # only in the root folder
 /*.pdf

@@ -12,3 +12,16 @@
 \def\mathllapinternal#1#2{\llap{$\mathsurround=0pt#1{#2}$}}%
 \def\mathrlapinternal#1#2{\rlap{$\mathsurround=0pt#1{#2}$}}%
 \def\mathclapinternal#1#2{\clap{$\mathsurround=0pt#1{#2}$}}%
+%
+%
+%
+%% Mathematical Notations for Complexity
+\protected\gdef\bigO{\ensuremath{\mathcal{O}}}%
+\protected\gdef\bigOOf#1{\ensuremath{\bigO\!\left(#1\right)}}%
+\protected\gdef\NP{\ensuremath{\mathcal{NP}}}%
+\protected\gdef\NPHard{\NP-\mbox{hard}}%
+%
+%% Mathematical Notations for Optimization
+\protected\gdef\objectiveFunction{\ensuremath{f}}%
+\protected\gdef\objectiveFunctionb#1{\ensuremath{\objectiveFunction\!\left(#1\right)}}%
+%

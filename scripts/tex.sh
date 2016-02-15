@@ -39,6 +39,7 @@ rm "${document}.pdf" || true
 rm "${document}.ps" || true
 rm "${document}.snm" || true
 rm "${document}.toc" || true
+rm "${document}.vrb" || true
 
 echo "We will perform runs of (Pdf)LaTeX/BibTeX until no internal files change anymore."
 
@@ -129,6 +130,7 @@ rm "${document}.out.ps" || true
 rm "${document}.ps" || true
 rm "${document}.snm" || true
 rm "${document}.toc" || true
+rm "${document}.vrb" || true
 
 if [[ -n "$post" ]]
 then

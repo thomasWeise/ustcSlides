@@ -67,10 +67,12 @@ upquote=true%
 %%% Put a listing as a block element
 %%% #1 relative width
 %%% #2 caption
-\newenvironment<>{listingblock}[2][0.95\paperwidth]{%
+\newlength{\@blabtmplistingsboxwcap}%
+\newenvironment<>{listingBlock}[2][0.95]{%
 \begin{actionenv}%
 \def\insertblocktitle{Listing: #2}%
-\begin{minipage}{#1}%
+\@blabtmplistingsboxwcap=#1\paperwidth%
+\begin{minipage}{\@blabtmplistingsboxwcap}%
 \mode<presentation>{\setbeamercolor{local structure}{parent=example text}}%
 \usebeamertemplate{block example begin}%%
 }{%%

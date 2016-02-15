@@ -168,3 +168,12 @@
 {\message{** patching of \string\beamer@@frametitle failed **}}%
 %
 %
+\gdef\printSectionOutlines{%
+\AtBeginSection[]{%
+\begin{frame}%
+\frametitle{Section Outline}%
+\tableofcontents[currentsection]%
+\end{frame}%
+}%
+}%
+%
