@@ -2,7 +2,7 @@
 
 Here I store my [LaTeX](https://en.wikipedia.org/wiki/LaTeX) template for [beamer](https://en.wikipedia.org/wiki/Beamer_%28LaTeX%29) slides. It is loosely based on the corporate design of the University of Science and Technology of China (<a href="http://en.wikipedia.org/wiki/University_of_Science_and_Technology_of_China">USTC</a>) [中国科学技术大学].
 
-## Usage
+## 1. Usage
 
 1. [download](https://github.com/thomasWeise/latexSlides/archive/master.zip) the template
 2. edit `slides.tex`
@@ -11,9 +11,9 @@ Here I store my [LaTeX](https://en.wikipedia.org/wiki/LaTeX) template for [beame
   2. `./scripts/pdflatex.sh slides evince` if you are using `pdf` figures
   3. `./scripts/xelatex.sh slides evince` if you have Chinese text
   
-## Available Commands
+## 2. Available Commands
 
-### Structural Commands
+### 2.1. Structural Commands
 
 The following structural commands should be used in exactly this order (while `\appendices` and `\printSectionOutlines` are optional).
 
@@ -22,7 +22,7 @@ The following structural commands should be used in exactly this order (while `\
 3. `\endPresentation` ends the presentation by putting a goodbye screen and the references
 4. `\appendices` starts appendix sections. Maybe you want to have some more slides in store if someone asks questions. Can be left away if there are no appendices.
 
-### Put Objects at Specific Locations
+### 2.2. Put Objects at Specific Locations
 
 Sometimes we want to locate stuff at specific positions on a slide. For this purpose, the following commands are used, which all operate on a `x-y` coordinate system where `x=0, y=0` is the top-left corner of the slide and `x=1, y=1` is the bottom-right corner.
 
@@ -34,12 +34,12 @@ Sometimes we want to locate stuff at specific positions on a slide. For this pur
 6. `\begin{lobateBox}{when}{x}{y}...\end{locateBox}` locate the contents of the environment at the specified `x-y` coordinates. If `when` is not empty, only display at the specified sub-slides.
 7. `\begin{scaledBox}{width}{height} ... \end{scaledBox}` an environment which scales its contents to the given `width` and `height`. If `width==!`, then we scale proportionally according to `height`. If `height=!`, then we scale proportionally to `width`.
 
-### Listings
+### 2.3. Listings
 
 1. You can use all the normal commands from package [`listings`](http://ctan.org/pkg/listings).
 2. `\begin{listingBlock}[width]{caption}...\end{listingBlock}` place a block with the specified `caption` which is supposed to contain a listing. The `width` can be specified relative to the paper width, if omitted, we use `0.95\paperwidth` as block width.
 
-### Citations
+### 2.4. Citations
 
 1. `\citep{ref}` cite reference `ref` by number
 2. `\scitep{ref}` cite reference `ref` by number, pre-pend non-breakable space. For use in text, like `bla bla blablabla\scitep{ref}`
@@ -48,6 +48,6 @@ Sometimes we want to locate stuff at specific positions on a slide. For this pur
 5. `\citete{authorRef}{refs}` cite references `refs` by number, but pre-pend the author names of reference `authorRef`. This is useful if a group of authors has produced several works, but the author order changes in these works.
 6. `\Citete{authorRef}{refs}` like `\citete{authorRef}{refs}`, but capitalize first character.
 
-### Chinese
+### 2.5. Chinese
 
-Include chinese text with the command `\zh{chinese text}`.
+Include Chinese text with the command `\zh{chinese text}`. You then need to use the XeLaTeX script for compiling.
