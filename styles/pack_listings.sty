@@ -81,3 +81,14 @@ upquote=true%
 \end{actionenv}%
 }%
 %
+% print some code inline
+% #1 the optional args
+% #2 the code to be printed inline
+\newcommand{\codeil}[2][]{%
+\if\relax\detokenize{#1}\relax%
+\lstinline[keywordstyle=\listingBasicStyle]$#2$%
+\else%
+\lstinline[basicstyle=\listingBasicStyle,keywordstyle={[1]\listingKeywordStyleA},keywordstyle={[2]\listingKeywordStyleB},keywordstyle={[3]\listingKeywordStyleC},keywordstyle=\listingKeywordStyleA,#1]$#2$%
+\fi%
+}%
+%

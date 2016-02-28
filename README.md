@@ -38,6 +38,7 @@ Sometimes we want to locate stuff at specific positions on a slide. For this pur
 
 1. You can use all the normal commands from package [`listings`](http://ctan.org/pkg/listings).
 2. `\begin{listingBlock}[width]{caption}...\end{listingBlock}` place a block with the specified `caption` which is supposed to contain a listing. The `width` can be specified relative to the paper width, if omitted, we use `0.95\paperwidth` as block width.
+3. `\codeil[format]{text}` formats `text` as source code (with the optional `format`, which can be any format support by `listings`, such as `Java`, `XML`, `C`, ...)
 
 ### 2.4. Citations
 
