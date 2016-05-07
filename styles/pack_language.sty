@@ -16,3 +16,4 @@
 %%% Print some text in Chinese characters
 %%% #1 the text to print
 \protected\gdef\zh#1{\internalBegin{CJK}{UTF8}{gbsn}#1\internalEnd{CJK}}%
+\protected\gdef\zhb#1{\mbox{\zh{#1}}}%

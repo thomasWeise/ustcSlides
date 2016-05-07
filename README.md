@@ -51,4 +51,4 @@ Sometimes we want to locate stuff at specific positions on a slide. For this pur
 
 ### 2.5. Chinese
 
-Include Chinese text with the command `\zh{chinese text}`. You then need to use the XeLaTeX script for compiling.
+Include Chinese text with the command `\zh{chinese text}`. You then need to use the XeLaTeX script for compiling. `\zhb{chinese text}` puts the text into an `\mbox{...}`, which prevents line breaks. This makes sense when using Chinese words like university names or other things that should not be broken across lines in an otherwise English text, for instance.
