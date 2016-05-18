@@ -59,7 +59,7 @@ while [ "$oldAuxHash" != "$auxHash" ] || \
 
   echo "Running '$program'."
   ${program} "${document}"
-  if ["$cycle" -ge 2] ; then
+  if (("$cycle" > 1)) ; then
     echo "This is cycle $cycle, so we need to run '$program' a second time."
     ${program} "${document}"
   fi
