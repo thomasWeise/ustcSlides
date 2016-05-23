@@ -21,7 +21,7 @@ build:
             code: lualatex.sh slides
         - script:
             name: MinTeX Build (default script from container)
-            code: mintex.sh latex pdflatex lualatex xelatex slides
+            code: mintex.sh slides latex pdflatex lualatex xelatex
         - script:
             name: LaTeX Build (script provided in project)
             code: ./scripts/latex.sh slides
@@ -36,4 +36,4 @@ build:
             code: ./scripts/lualatex.sh slides
         - script:
             name: MinTex Build (script provided in project)
-            code: ./scripts/mintex.sh latex pdflatex lualatex xelatex slides
+            code: ./scripts/mintex.sh slides latex pdflatex lualatex xelatex
