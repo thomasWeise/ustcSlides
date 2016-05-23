@@ -10,17 +10,24 @@ build:
         - script:
             name: LaTeX Build (default script from container)
             code: latex.sh slides
+        - script:
             name: PdfLaTeX Build (default script from container)
             code: pdflatex.sh slides
+        - script:
             name: XeLaTeX Build (default script from container)
             code: xelatex.sh slides
+        - script:
             name: LuaLaTeX Build (default script from container)
             code: lualatex.sh slides
+        - script:
             name: LaTeX Build (script provided in project)
             code: ./scripts/latex.sh slides
+        - script:
             name: PdfLaTeX Build (script provided in project)
             code: ./scripts/pdflatex.sh slides
+        - script:
             name: XeLaTeX Build (script provided in project)
             code: ./scripts/xelatex.sh slides
+        - script:
             name: LuaLaTeX Build (script provided in project)
             code: ./scripts/lualatex.sh slides
