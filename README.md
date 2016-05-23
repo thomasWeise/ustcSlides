@@ -9,7 +9,8 @@ Here I store my [LaTeX](https://en.wikipedia.org/wiki/LaTeX) template for [beame
 3. in order to produce a pdf of your slides, under Linux run
   1. `./scripts/latex.sh slides evince` if you are using `eps` figures
   2. `./scripts/pdflatex.sh slides evince` if you are using `pdf` figures
-  3. `./scripts/xelatex.sh slides evince` if you have Chinese text
+  3. `./scripts/xelatex.sh slides evince` if you have Chinese text (also: produces smaller output than `pdflatex`)
+  4. `./scripts/lualatex.sh slides evince` if the above commands fail (LuaLaTeX is slightly better in dealing with memory allocation and stuff)  
   
 ## 2. Available Commands
 
