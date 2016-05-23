@@ -1,6 +1,6 @@
 # LaTeX Slides
 
-[<img alt="Wercker Build Status" src="https://img.shields.io/wercker/ci/5742d19bf534731424006e09.svg" height="20"/>](https://app.wercker.com/#applications/5742d19bf534731424006e09)
+[<img alt="Wercker Build Status" src="https://img.shields.io/wercker/ci/5742d62fb6677f7b7d012c60.svg" height="20"/>](https://app.wercker.com/#applications/5742d62fb6677f7b7d012c60)
 
 Here I store my [LaTeX](https://en.wikipedia.org/wiki/LaTeX) template for [beamer](https://en.wikipedia.org/wiki/Beamer_%28LaTeX%29) slides. It is loosely based on the corporate design of the University of Science and Technology of China (<a href="http://en.wikipedia.org/wiki/University_of_Science_and_Technology_of_China">USTC</a>) [中国科学技术大学].
 
