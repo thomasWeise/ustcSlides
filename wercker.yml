@@ -1,0 +1,26 @@
+##
+## Build with Wercker
+##
+## https://app.wercker.com/#applications/5742d19bf534731424006e09
+#
+box: thomasweise/texlive
+#
+build:
+    steps:
+        - script:
+            name: LaTeX Build (default script from container)
+            code: latex.sh slides
+            name: PdfLaTeX Build (default script from container)
+            code: pdflatex.sh slides
+            name: XeLaTeX Build (default script from container)
+            code: xelatex.sh slides
+            name: LuaLaTeX Build (default script from container)
+            code: lualatex.sh slides
+            name: LaTeX Build (script provided in project)
+            code: ./scripts/latex.sh slides
+            name: PdfLaTeX Build (script provided in project)
+            code: ./scripts/pdflatex.sh slides
+            name: XeLaTeX Build (script provided in project)
+            code: ./scripts/xelatex.sh slides
+            name: LuaLaTeX Build (script provided in project)
+            code: ./scripts/lualatex.sh slides
