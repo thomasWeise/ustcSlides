@@ -79,15 +79,8 @@
 %
 \begin{frame}%
 \frametitle{Outline}%
-\tableofcontents%
-%
-\if\relax\detokenize{#1}\relax%
-\expandafter\@firstoftwo%
-\else%
-\expandafter\@secondoftwo%
-\fi{}%
-{#1}%
-%
+\tableofcontents[subsectionstyle=hide/hide/hide]%
+#1%
 \end{frame}%
 %
 }%
@@ -148,11 +141,14 @@
 %
 }%
 %
-\gdef\appendices{%
+\gdef\appendices#1{%
 \pdfbookmark[1]{Appendices}{appendices}%
 \section*{Appendices}%
-\global\let\section\subsection%
-%\global\let\@framePatch\@framePatch@doNothing%
+\begin{frame}%
+\frametitle{Appendix Outline}%
+\tableofcontents[sectionstyle=show/hide,subsectionstyle=show/show/hide]%
+#1%
+\end{frame}%
 }%
 %
 %
@@ -172,7 +168,7 @@
 \AtBeginSection[]{%
 \begin{frame}%
 \frametitle{Section Outline}%
-\tableofcontents[currentsection]%
+\tableofcontents[currentsection,subsectionstyle=show/show/hide]%
 \end{frame}%
 }%
 }%

@@ -23,7 +23,7 @@ The following structural commands should be used in exactly this order (while `\
 1. `\startPresentation{optional}` start the presentation and put the `optional` content on the outline slides, if any. After this, your slides should come.
 2. `\printSectionOutlines` optional: a section outline should be printed at the beginning of each section
 3. `\endPresentation` ends the presentation by putting a goodbye screen and the references
-4. `\appendices` starts appendix sections. Maybe you want to have some more slides in store if someone asks questions. Can be left away if there are no appendices.
+4. `\appendices{optional}` starts appendix sections and prints the contents of `optional` on the start slide. Maybe you want to have some more slides in store if someone asks questions. Can be left away if there are no appendices.
 
 ### 2.2. Put Objects at Specific Locations
 
