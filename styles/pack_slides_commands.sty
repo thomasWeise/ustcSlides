@@ -141,6 +141,7 @@
 %
 }%
 %
+% define appendix command; print #1 on appendix slide
 \gdef\appendices#1{%
 \pdfbookmark[1]{Appendices}{appendices}%
 \section*{Appendices}%
@@ -149,6 +150,14 @@
 \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/show/hide]%
 #1%
 \end{frame}%
+%
+\global\newcount\@appendix@hrefids%
+\global\@appendix@hrefids 0\relax%
+%
+\gdef\appendix##1{%
+\global\advance \@appendix@hrefids 1\relax%
+\expandafter\pdfbookmark\expandafter[\expandafter2\expandafter]\expandafter{##1}{appendix\the\@appendix@hrefids}%
+\subsection{##1}%
 }%
 %
 %
