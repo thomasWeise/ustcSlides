@@ -1,0 +1,183 @@
+\documentclass[mathserif]{beamer}%
+%
+%
+\RequirePackage{./styles/slides}%
+%
+%
+\title[%
+Summary%
+]{%
+\zhb{研一下总结}%
+}%
+%
+\author[Huang Zhihua]{%
+Huang Zhihua\\%
+\footnotesize{%
+\mbox{\href{mailto:hzh8311@mail.ustc.edu.cn}{hzh8311@mail.ustc.edu.cn}}}} %
+%
+\institute[USTC]{%
+Lab of Multimedia Computing and Communication\\%
+University of Science and Technology of China (USTC), Hefei 230027, Anhui, China%
+}%
+%
+\date{\today}%
+%
+%
+\begin{document}%
+%
+\startPresentation{}%
+%
+%
+\AtBeginSection[]{%
+\begin{frame}%
+\frametitle{Section Outline}%
+\tableofcontents[currentsection]%
+\end{frame}%
+}%
+%
+%
+\section{Papers Revisit}%
+%
+\begin{frame}%
+\frametitle{Papers Revisit}%
+\begin{itemize}%
+\item Cascaded Pose Regression\scitep{CPR}%
+\item Robust Cascaded Pose Regression\scitep{RCPR}%
+\item Discriminative Fitting Response Maps\scitep{DFRM}%
+\item Supervised Descent Method\scitep{SDM}%
+\item Global Supervised Descent Method\scitep{GSDM}%
+\item Face Alignment at 3000fps via Local Binary Features\scitep{FALBF}%
+\item Unconstrained Face Alignment via Cascaded Compositional Learning\scitep{CCL}%
+\item Deep Regression Networks Coupled with De-corrupted Autoencoder\scitep{DRDA}%
+\end{itemize}%
+\end{frame}%
+%
+\subsection{Cascade Pose Regression}
+\begin{frame}%
+\frametitle{Cascaded Pose Regression}
+\begin{itemize}
+    \item Main idea:\\
+    \item Features:\\
+    \item Model:\\
+\end{itemize}
+\end{frame}
+%
+\subsection{Robust Cascade Pose Regression}
+\begin{frame}%
+\frametitle{Robust Cascaded Pose Regression}
+\begin{itemize}
+    \item Main idea:\\
+    \item Features:\\
+    \item Model:\\
+\end{itemize}
+\end{frame}
+%
+%
+\subsection{Discriminative Fitting Response Maps}
+\begin{frame}%
+\frametitle{Discriminative Fitting Response Maps}
+\begin{itemize}
+    \item Main idea:\\
+    \item Features:\\
+    \item Model:\\
+\end{itemize}
+\end{frame}
+%
+\subsection{Face Alignment at 3000fps via Local Binary Features}
+\begin{frame}%
+\frametitle{Face Alignment at 3000fps via Local Binary Features}
+\begin{itemize}
+    \item Main idea:\\
+    \item Features:\\%
+        \zh 使用Random Forest\zh{提取}Local Binary Features%
+    \item Model:\\
+        Cascaded Regeression Model
+\end{itemize}
+\end{frame}
+%
+\subsection{Supervised Descent Method}
+\label{subsec:SDM}
+\begin{frame}%
+\frametitle{Supervised Descent Method}
+\begin{itemize}
+    \item Main idea:\\
+    \item Features:\\
+      SIFT
+    \item Model:\\
+      Cascaded Regeression Model
+\end{itemize}
+\end{frame}
+%
+\subsection{Global Supervised Descent Method}
+\begin{frame}%
+\frametitle{Global Supervised Descent Method}
+\begin{itemize}
+    \item Main idea:\\
+      DHDs(Domains of Homogenous Descent)
+    \item Features:\\
+      SIFT
+    \item Model:\\
+\end{itemize}
+\end{frame}
+%
+\subsection{Unconstrained Face Alignment via CCL}
+\begin{frame}%
+\frametitle{Unconstrained Face Alignment via CCL}
+\begin{itemize}
+    \item Main idea:\\
+    \item Features:\\
+      Revised LBF
+    \item Model:\\
+      DHDs Model
+\end{itemize}
+\end{frame}
+%
+\subsection{Deep Regression Networks Coupled with De-corrupted Autoencoder}
+\begin{frame}%
+\frametitle{Deep Regression Networks Coupled with De-corrupted Autoencoder}
+\begin{itemize}
+    \item Main idea:\\
+      cascading a Autoencoder to de-corrupt the occlusion part of the face;\\
+      And benefit regression networks and de-corrupt autoencoder from each other.
+    \item Features:\\
+    \item Model:\\
+      DRDA
+\end{itemize}
+\end{frame}
+%
+
+\section{Experiment}
+\begin{frame}[t]{Experiment}
+    \begin{itemize}
+        \item RCPR
+        \item LBF
+        \item DFRM
+    \end{itemize}
+\end{frame}
+%
+\subsubsection{Robust Cascade Pose Regression}
+\label{ssub:RCPR}
+\begin{frame}[t]{RCPR}
+    Result:\\
+\end{frame}
+%
+\subsubsection{Local Binary Features}
+\label{ssub:LBF}
+\begin{frame}[t]{Local Binary Features}
+    Result:\\
+\end{frame}
+%
+\subsubsection{Discriminative Fitting Response Maps}
+\label{ssub:DFRM}
+\begin{frame}[t]{Discriminative Fitting Response Maps}
+    Result:\\
+\end{frame}
+%
+\endPresentation%
+%
+%\appendices%
+%
+%
+\end{document}%%
+\endinput%
+%
