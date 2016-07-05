@@ -4,16 +4,16 @@
 %%% Provide command \zh to enable us to write Chinese characters
 %%%
 %
-\let\internalBegin\begin%
-\let\internalEnd\end%
-%
-%%% Our text is UTF-8 encoded.
-\RequirePackage[utf8]{inputenc}%
-%
-\RequirePackage{CJKutf8}%
-%
-%%%
-%%% Print some text in Chinese characters
-%%% #1 the text to print
-\protected\gdef\zh#1{\internalBegin{CJK}{UTF8}{gbsn}#1\internalEnd{CJK}}%
-\protected\gdef\zhb#1{\mbox{\zh{#1}}}%
+% \let\internalBegin\begin%
+% \let\internalEnd\end%
+% %
+% %%% Our text is UTF-8 encoded.
+% \RequirePackage[utf8]{inputenc}%
+% %
+\RequirePackage[nocap]{ctex}%
+% %
+% %%%
+% %%% Print some text in Chinese characters
+% %%% #1 the text to print
+% \protected\gdef\zh#1{\internalBegin{CJK}{UTF8}{gbsn}#1\internalEnd{CJK}}%
+% \protected\gdef\zhb#1{\mbox{\zh{#1}}}%
