@@ -12,7 +12,7 @@
 *.snm
 *.toc
 *.vrb
-/auto
+auto
 
 # only in the root folder
 /*.pdf
