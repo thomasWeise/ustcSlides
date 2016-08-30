@@ -16,10 +16,11 @@
 \xdef\listingIdentifierStyle{}%
 %
 \RequirePackage[formats]{listings}%
-\RequirePackage{lstlang1}%
-\RequirePackage{lstlang2}%
-\RequirePackage{lstlang3}%
-\RequirePackage{textcomp}%
+\IfFileExists{lstlang1.sty}{\RequirePackage{lstlang1}}{}%
+\IfFileExists{lstlang2.sty}{\RequirePackage{lstlang2}}{}%
+\IfFileExists{lstlang3.sty}{\RequirePackage{lstlang3}}{}%
+\IfFileExists{textcomp.sty}{\RequirePackage{textcomp}}{\gdef\textsuperscript#1{#1}}%
+%
 %
 %
 %%% We treat some unicode characters as literate programming keys,

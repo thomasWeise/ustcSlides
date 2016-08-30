@@ -7,8 +7,14 @@
 \let\internalBegin\begin%
 \let\internalEnd\end%
 %
-%%% Our text is UTF-8 encoded.
+%% Our text should be UTF-8 encoded, as UTF-8 is the standard encoding
+%% throughout the internet.
+\IfFileExists{inputenc.sty}{%
+\typeout{Found inputenc. Loading it with option 'utf8'.}%
 \RequirePackage[utf8]{inputenc}%
+}{%
+\typeout{Warning: inputenc not found.}%
+}%
 %
 \RequirePackage{CJKutf8}%
 %
