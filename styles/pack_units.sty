@@ -1,3 +1,17 @@
 %
+\ifluatex%
+%
+%%% If we use cetex in package pack_language and compile using luatex,
+%%% this leads to a conflict with SIunits, as this already defines
+%%% 'hour' and 'minute'.
+%%% We thus here store the definition of these two commands, then
+%%% delete them. After loading SIunits, we restore them.
+\let\minute\undefined%
+\let\hour\undefined%
+%
 \RequirePackage[thinspace,thinqspace,squaren,textstyle,binary]{SIunits}%
+%
+\else%
+\RequirePackage[thinspace,thinqspace,squaren,textstyle,binary]{SIunits}%
+\fi%
 %
