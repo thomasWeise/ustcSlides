@@ -5,23 +5,26 @@
 %%%
 %
 %
+%
+\RequirePackage{ifxetex}%
+\RequirePackage{ifluatex}%
+%
 %% Our text should be UTF-8 encoded, as UTF-8 is the standard encoding
 %% throughout the internet.
+\ifxetex\else\ifluatex\else%
 \IfFileExists{inputenc.sty}{%
 \typeout{Found inputenc. Loading it with option 'utf8'.}%
 \RequirePackage[utf8]{inputenc}%
 }{%
 \typeout{Warning: inputenc not found.}%
 }%
-%
+\fi\fi%
 %
 %% We would ideally use ctex to compile out slides.
 %% However, it seems that this does not work well under plain
 %% LaTeX and PdfLaTeX. Thus, we first detect whether we are
 %% under LuaLaTeX or XeLaTeX, where it works well. If so, we can
 %% use it. Otherwise, we will attempt to use CJKutf8 instead.
-\RequirePackage{ifxetex}%
-\RequirePackage{ifluatex}%
 \newif\ifCanUseCtex%
 \CanUseCtexfalse%
 \ifxetex% 
