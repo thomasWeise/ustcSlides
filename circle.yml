@@ -1,0 +1,23 @@
+##
+## Build with CircleCI
+##
+## https://circleci.com/gh/thomasWeise/ustcSlides
+#
+machine:
+# Install the newest version of texlive.
+  pre:
+  - sudo add-apt-repository -y ppa:jonathonf/texlive-2016
+  - sudo apt-get -q -y update
+  - sudo apt-get -q -y --no-install-recommends install fonts-arphic-bkai00mp fonts-arphic-bsmi00lp fonts-arphic-gbsn00lp fonts-arphic-gkai00mp ko.tex-extra-hlfont latex-cjk-all lmodern prosper ps2eps tex-gyre texlive texlive-lang-chinese texlive-lang-cjk texlive-extra-utils texlive-lang-japanese texlive-lang-korean texlive-luatex texlive-science texlive-xetex
+    
+# We do nothing here.
+dependencies:
+  override:
+    - echo "Nothing"
+      
+# We set a high timeout to prevent the test from being
+# terminated unexpectedly.
+test:
+  override:
+    - ./scripts/mintex.sh slides latex xelatex pdflatex lualatex
+    - cp "slides.pdf" "$CIRCLE_ARTIFACTS"
