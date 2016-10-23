@@ -41,12 +41,108 @@ University of Science and Technology of China (USTC), Hefei 230027, Anhui, China
 \section{Introduction}%
 %
 \begin{frame}%
-\frametitle{Intro}%
+\frametitle{\LaTeX}%
 \begin{itemize}%
-\item bla\scitep{WGOEB}%
+\item This is a theme for creating nice slides with \LaTeX\ and the beamer document class%
 \end{itemize}%
 \end{frame}%
 %
+\begin{frame}%
+\frametitle{Structure}%
+\begin{itemize}%
+\item A presentation is structured into%
+\begin{enumerate}%
+\item a head, where you write information such as the title and your affiliation,%
+\item a body, with the actual contents, and%
+\item a foot, with the references and the good-bye slide%
+\end{enumerate}%
+\item The body can and should be divided into sections with the \texttt{{\textbackslash}section{\dots}} command%
+\item Each section can contain multiple \texttt{frame}s, where each frame is one slide (which may be composed of several steps, see later)%
+\end{itemize}%
+\end{frame}%
+%
+\section{\LaTeX\ Commands}%
+%
+\begin{frame}%
+\frametitle{Itemizations}%
+This is an introduction to itemizations.%
+\begin{itemize}%
+\item We can have item lists with the \texttt{itemize} environment.%
+\item Each item will then begin with an \texttt{{\textbackslash}item} command.%
+\item Itemizations can also be nested:%
+\begin{itemize}%
+\item Like this.%
+\item Which is nice too.
+\end{itemize}%
+\end{itemize}%
+\end{frame}%
+%
+\begin{frame}%
+\frametitle{Enumerations}%
+This is an introduction to enumerations.%
+\begin{enumerate}%
+\item We can have numbered lists with the \texttt{enumerate} environment.%
+\item Each item will then begin with an \texttt{{\textbackslash}item} command.%
+\item Enumerations can also be nested:%
+\begin{enumerate}%
+\item Like this.%
+\item Which is nice too.
+\end{enumerate}%
+\item We can also nest itemizations in them, and vice versa:%
+\begin{itemize}%
+\item See?%
+\item And now another enumeration:%
+\begin{enumerate}%
+\item See?
+\end{enumerate}%
+\end{itemize}%
+\end{enumerate}%
+\end{frame}%
+%
+\begin{frame}%
+\frametitle{Showing Stuff Step-Wise}%
+Things can be shown step-wise\uncover<2->{:%
+\begin{itemize}%
+\item If you want to show a thing on the $n$\textsuperscript{th} \inQuotes{step} of a slide, you can wrap it into a command of the form \texttt{{\textbackslash}uncover<$n$->\{\dots\}}%
+\item<3-> It then remains invisible until the $n$\textsuperscript{th} step is reached, but occupies space.%
+\item<4-> If you want something to remain invisible and not occupy space, you can use \texttt{{\textbackslash}only<$n$->\{\dots\}}%
+\item<5-> Actually, the stuff inside the \texttt{<\dots>} marks a range of steps.\only<6-9>{ Write%
+\begin{itemize}%
+\item \texttt{<10>} to show something \emph{only} at the 10\textsuperscript{th} step\uncover<7->{,}%
+\item<7-> \texttt{<10->} to show something starting at the 10\textsuperscript{th} step and thereafter\uncover<8->{,}%
+\item<8-> \texttt{<9-11>} to show something from the 9\textsuperscript{th} to the 11\textsuperscript{th} step\uncover<9->{,}%
+\item<9-> \texttt{<4,9-11,14->} to show something from at the 4\textsuperscript{th}, the 9\textsuperscript{th} to the 11\textsuperscript{th}, and from the 14\textsuperscript{th} step onwards, and so on.%
+\end{itemize}}%
+\item<10-> Many commands, such as \texttt{{\textbackslash}item}, can take an argument of the form \texttt{<...>}, which makes their effect similar to be wrapped into an \texttt{{\textbackslash}uncover<$n$->\{\dots\}}.%
+\item<11-> If you use \texttt{{\textbackslash}only} in your slides, you better use \texttt{{\textbackslash}begin\{frame\}[t]} instead of \texttt{{\textbackslash}begin\{frame\}} to begin a frame, or stuff will jump around like on this slide here.%
+%
+\end{itemize}%
+}%
+\end{frame}%
+%
+\begin{frame}%
+\frametitle{Colors}%
+\begin{itemize}%
+\item You can use colors to color something%
+\item<2-> You would use the \texttt{{\textbackslash}textcolor\{color\}\{text\}} command for this and, e.g., write \textcolor{red}{\texttt{{\textbackslash}textcolor\{red\}\{hello\}}}%
+\item<3-> This command also takes an \texttt{<\dots>} argument, which allows you to do \textcolor<4,6>{green}{\texttt{{\textbackslash}textcolor<4,6>\{green\}\{hello\}}}%
+\item<7-> You can also use the command \texttt{{\textbackslash}alert\{\dots\}} to mark something especially important.%
+\item<8-> It, too, can take the \texttt{<\dots>} argument.%
+\end{itemize}%
+\end{frame}%
+%
+\begin{frame}%
+\frametitle{References}%
+Commands for references to literature (stored as Bib\TeX\ records in the file \texttt{bibliography/bibliography.bib}):%
+\begin{itemize}%
+\item\small numerical citations are done with \texttt{{\textbackslash}citep\{reference\}} and look like \inQuotes{blabla\citep{WGOEB}}%
+\item\small numerical citations with non-breakable space in front are done with \texttt{{\textbackslash}scitep\{reference\}} and look like \inQuotes{blabla\scitep{WWCTL2016GVLSTIOPSOEAP}}, which is usually the better way%
+\item\small citations with author names and numerical id are done as \texttt{{\textbackslash}citet\{reference\}} and look like \inQuotes{blabla \citet{WNSRG2008ATMFMOERANFL}}%
+\item\small citations with author names and numerical id at the beginning of a sentence are done as \texttt{{\textbackslash}Citet\{reference\}} and look like \inQuotes{blabla. \Citet{WPG2009SRWVRPWEA}}%
+\item\small citations with author names only are done as \texttt{{\textbackslash}citeauthor\{reference\}} and look like \inQuotes{blabla \citeauthor{WCTLTCMY2014BOAAOSFFTTSP}}%
+\item\small citations with author names only at the beginning of a sentence are done as \texttt{{\textbackslash}Citeauthor\{reference\}} and look like \inQuotes{blabla. \Citeauthor{WCT2012EOPABT}}%
+\end{itemize}%
+\end{frame}%
 %
 \endPresentation%
 %
