@@ -45,6 +45,10 @@ rm "$document.synctex.gz" || true
 rm "$document.toc" || true
 rm "$document.vrb" || true
 
+echo "Now removing Unicode BOMs of .tex and .sty files, if any, as they will confuse LaTeX compilers"
+sed -i '1 s/^\xef\xbb\xbf//' "$document.tex"
+sed -i '1 s/^\xef\xbb\xbf//' *.sty || true
+
 echo "We will perform runs of $program/BibTeX until no internal files change anymore."
 
 auxHash=""

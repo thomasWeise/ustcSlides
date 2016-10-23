@@ -1,8 +1,8 @@
-# LaTeX Slides
+# [USTC](http://www.ustc.edu.cn)-Themed [LaTeX](https://en.wikipedia.org/wiki/LaTeX) Slides
 
-[<img alt="Wercker Build Status" src="https://img.shields.io/wercker/ci/5742d62fb6677f7b7d012c60.svg" height="20"/>](https://app.wercker.com/#applications/5742d62fb6677f7b7d012c60)
+[<img alt="Wercker Build Status" src="https://img.shields.io/wercker/ci/bd9d838c88053b3526ba02d2cc7a5b42.svg" height="20"/>](https://app.wercker.com/#applications/5742d62fb6677f7b7d012c60)
 
-Here I store my [LaTeX](https://en.wikipedia.org/wiki/LaTeX) template for [beamer](https://en.wikipedia.org/wiki/Beamer_%28LaTeX%29) slides. It is loosely based on the corporate design of the University of Science and Technology of China (<a href="http://en.wikipedia.org/wiki/University_of_Science_and_Technology_of_China">USTC</a>) [中国科学技术大学].
+Here I store my [USTC](http://www.ustc.edu.cn)-themed [LaTeX](https://en.wikipedia.org/wiki/LaTeX) slides template for [beamer](https://en.wikipedia.org/wiki/Beamer_%28LaTeX%29) slides. It is loosely based on the corporate design of the University of Science and Technology of China (<a href="http://en.wikipedia.org/wiki/University_of_Science_and_Technology_of_China">USTC</a>) [中国科学技术大学].
 
 ## 1. Usage
 
