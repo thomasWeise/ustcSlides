@@ -8,7 +8,7 @@ Here I provide my [USTC](http://www.ustc.edu.cn)-themed [LaTeX](https://en.wikip
 
 ## 1. Usage
 
-1. [download](https://github.com/thomasWeise/latexSlides/archive/master.zip) the template
+1. [download](https://github.com/thomasWeise/ustcSlides/archive/master.zip) the template
 2. edit `slides.tex`
 3. in order to produce a pdf of your slides, under Linux run
   1. `./scripts/latex.sh slides evince` if you are using `eps` figures
