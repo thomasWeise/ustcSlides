@@ -111,6 +111,12 @@
 }%
 \end{frame}%
 %
+\ifnum\@bib@numcites>0\relax%
+\expandafter\@firstoftwo%
+\else%
+\expandafter\@secondoftwo%
+\fi{%
+%
 \usebackgroundtemplate{%
 \hspace{-0.005\paperwidth}%
 \vspace{-0.005\paperheight}%
@@ -136,6 +142,7 @@
 \bibliography{./bibliography/bibliography}%
 \end{tiny}%
 \end{frame}%
+}{}%
 %
 \global\let\@framePatch\@framePatch@addBookmarks%
 %

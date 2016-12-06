@@ -14,6 +14,8 @@
 %%%
 %
 %
+\newcount\@bib@numcites%
+\@bib@numcites=0%
 \let\@bib@oldcite\cite%
 \let\@bib@oldcitep\citep%
 \let\@bib@oldcitet\citet%
@@ -22,21 +24,21 @@
 \let\@bib@oldCitete\Citete%
 %
 %% the internal color macros for the citation
-%% used to set citation color to blue normally and to gray inside image source references
-\edef\@origCitationColor{footerdarkblue}%
+%% used to set citation color to brown normally and to gray inside image source references
+\edef\@origCitationColor{footerdarkbrown}%
 \let\@citationColor\@origCitationColor%
 %
 %% cite a reference by number, e.g., [1]
-\gdef\cite#1{\textsuperscript{\textnormal{\scalebox{0.75}{\color{\@citationColor}{\@bib@oldcite{#1}}}}}}%
+\gdef\cite#1{\textsuperscript{\textnormal{\scalebox{0.75}{\color{\@citationColor}{\@bib@oldcite{#1}}}}}\global\advance\@bib@numcites by 1}%
 %% same as cite
-\gdef\citep#1{\textsuperscript{\textnormal{\scalebox{0.75}{\color{\@citationColor}{\@bib@oldcitep{#1}}}}}}%
+\gdef\citep#1{\textsuperscript{\textnormal{\scalebox{0.75}{\color{\@citationColor}{\@bib@oldcitep{#1}}}}}\global\advance\@bib@numcites by 1}%
 %% cite a reference by number, but pre-pend non-breakable space, e.g., ~[1]
-\gdef\scitep#1{\textsuperscript{\textnormal{\scalebox{0.75}{~\color{\@citationColor}{\@bib@oldcitep{#1}}}}}}%
+\gdef\scitep#1{\textsuperscript{\textnormal{\scalebox{0.75}{~\color{\@citationColor}{\@bib@oldcitep{#1}}}}}\global\advance\@bib@numcites by 1}%
 %% cite a reference by author/number, e.g., von Weise~[1]
-\gdef\citet#1{\citeauthor{#1}~\citep{#1}}%
+\gdef\citet#1{\citeauthor{#1}~\citep{#1}\global\advance\@bib@numcites by 1}%
 %% cite a reference by author/number, but capitalize first letter, e.g., Von Weise~[1]
-\gdef\Citet#1{\Citeauthor{#1}~\citep{#1}}%
+\gdef\Citet#1{\Citeauthor{#1}~\citep{#1}\global\advance\@bib@numcites by 1}%
 %% cite a couple of references by the first author followed by numbers, e.g., von Weise~[1,2,3]
-\gdef\citete#1#2{\citeauthor{#1}~\citep{#2}}%
+\gdef\citete#1#2{\citeauthor{#1}~\citep{#2}\global\advance\@bib@numcites by 1}%
 %% cite a couple of references by the first author followed by numbers, but capitalize first letter,e.g., von Weise~[1,2,3]
-\gdef\Citete#1#2{\Citeauthor{#1}~\citep{#2}}%
+\gdef\Citete#1#2{\Citeauthor{#1}~\citep{#2}\global\advance\@bib@numcites by 1}%
